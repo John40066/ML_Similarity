@@ -4,7 +4,6 @@
   "description": "Using ML to get similarity of 2 images.",
   "main": "./run.js",
   "scripts": {
-    "run": "node run.js",
     "start": "node Manual_Ident.js"
   },
   "dependencies": {

@@ -3,9 +3,8 @@ const fs = require('fs');
 const express = require('express');
 const prompt = require("prompt-sync")();
 var app = express();
-let count = 0;
 
-let data1, data2, Matches, dir, num;
+let CList1, CList2, dir, num, Diff1, Diff2, count = 0;
 try {
     num = prompt("> Enter Case Number : ")
     dir = "./data/" + num
@@ -13,23 +12,21 @@ try {
         throw { stack: "[Error] Wrong case number\nNo such File, '" + dir + "'" };
     }
     let d1_str, d2_str, m_str;
-    d1_str = fs.readFileSync(dir + '/data1.json')
-    d2_str = fs.readFileSync(dir + '/data2.json')
-    m_str = fs.readFileSync(dir + '/matches.json')
-    data1 = JSON.parse(d1_str)
-    data2 = JSON.parse(d2_str)
-    Matches = JSON.parse(m_str)
+    d1_str = fs.readFileSync(dir + '/NeedCheck1.json')
+    d2_str = fs.readFileSync(dir + '/NeedCheck2.json')
+    CList1 = JSON.parse(d1_str)
+    CList2 = JSON.parse(d2_str)
+    Diff1 = CList1[CList1.length - 1]
+    Diff2 = CList1[CList2.length - 1]
 }
 catch (err) { Err_Exit(err) }
-let avr_diff_2 = [Math.round(Matches.Avr_diff[0] * 1.25), Math.round(Matches.Avr_diff[1] * 1.25)]
-let avr_diff_1 = [-avr_diff_2[0], -avr_diff_2[1]]
 
 app.use("/view", express.static("view"));
 app.use("/data", express.static("data"));
 app.use("/src", express.static("src"));
 
 app.get('/', function (req, res) {
-    let nextUrl = `http://localhost:8081/main?id=${num}&pt1=${avr_diff_1[0]}&pt2=${avr_diff_2[0]}`;
+    let nextUrl = `http://localhost:8081/main?id=${num}`;
     res.redirect(nextUrl);
 })
 
@@ -45,14 +42,22 @@ app.get('/result', function (req, res) {
 })
 
 app.get('/select', function (req, res) {
-    console.log("'/select' Receive [GET] Method")
+    // console.log("'/select' Receive [GET] Method")
     res.sendFile(__dirname + "/view/select.html");
 })
 
 app.get('/reply', function (req, res) {
-    console.log("'/reply' Receive [GET] Method")
+    // console.log("'/reply' Receive [GET] Method")
     let que = req.query
-    let nextUrl = `http://localhost:8081/select?id=${que.id}&row=${que.row}&col=${que.col}&pt1=${que.pt1}&pt2=${que.pt2}`;
+    if (que.start != 'Y') {
+        CList1[count][2] = que.result;
+        fs.writeFile(dir + '/data/NeedCheck1.json', JSON.stringify(CList1), (err) => { Err_Exit(err) })
+        count += 1;
+        if (count == CList1.length - 1) {
+            res.redirect('http://localhost:8081/result')
+        }
+    }
+    let nextUrl = `http://localhost:8081/select?id=${num}&x=${CList1[count][1]}&y=${CList1[count][0]}&pt1=${Diff1[0]}&pt2=${Diff1[0]}`;
     res.redirect(nextUrl);
 })
 
