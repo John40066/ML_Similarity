@@ -1,4 +1,5 @@
 *.exe
+run.js
 
 /data
 /node_modules

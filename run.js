@@ -1,5 +1,5 @@
-let webURL = "https://www.youtube.com/?gl=TW&hl=zh-TW"
-let caseNum = 0
+let webURL = "https://zh.wikipedia.org/wiki/Wikipedia:%E9%A6%96%E9%A1%B5"
+let caseNum = 1
 
 const { Info, Warning, Err, Err_Exit } = require("./custom_modules/msg");
 const { TextCompare } = require('./custom_modules/TextCompare');
@@ -21,12 +21,10 @@ async function Base642Mat(base64) {
 
 function Mat2Base64(mat) {
   /*
-    Function: Convert Mat of OpenCv to 
- 
-    Parameter:
-      mat: cv.Mat(), Image to be converted.
- 
-    Return: String, Image in base64.
+    # Function: Convert Mat of OpenCv to 
+    # Parameter:
+        mat: cv.Mat(), Image to be converted.
+    # Return: String, Image in base64.
   */
   const size = mat.size()
   const png = new PNG({ width: size.width, height: size.height })
@@ -37,13 +35,11 @@ function Mat2Base64(mat) {
 
 async function Screenshot(driver, name = "") {
   /*
-    Function: Taking screenshot and store in ./Data/...
- 
-    Parameter:
-      driver: webdriver,  Driver create by selenium.
-      name:   String,     File name
- 
-    Return: String, Image in base64.
+    # Function: Taking screenshot and store in ./data/... if name is not empty
+    # Parameter:
+        driver: webdriver,  Driver create by selenium.
+        name:   String,     File name
+    # Return: String, Image in base64.
   */
   let base64Data
   await driver.takeScreenshot().then(function (data) {
@@ -61,10 +57,9 @@ function saveImg(img, name = "test.png") {
 
 async function Waiting(time) {
   /*
-    Function: Use "await Waiting(t)" to wait t second. Can only used in async function.
-    
-    Param:
-      time: Integer, Wait how much second.
+    # Function: Use "await Waiting(t)" to wait t second. Can only used in async function.
+    # Param:
+        time: Integer, Wait how much second.
   */
   for (let t = 0; t < time; ++t)
     for (let i = 0; i < 40000; ++i)
@@ -78,7 +73,7 @@ function createFolder() {
   while (!succeed) {
     dir = './data/' + caseNum.toString();
     try {
-      // first check if directory already exists
+      // Check if the directory already exists
       if (!fs.existsSync(dir)) {
         fs.mkdirSync(dir)
         Info("New directory is created.")
@@ -101,7 +96,7 @@ function createFolder() {
   return dir;
 }
 
-function HistCheck(img, thres = 90) {
+function HistCheck(img, thres = 85) {
   let src = img.clone();
   cv.cvtColor(src, src, cv.COLOR_RGBA2GRAY, 0);
   let srcVec = new cv.MatVector();
@@ -118,9 +113,9 @@ function HistCheck(img, thres = 90) {
   return false;
 }
 
-function TouchMatchPair(x, y, dn) {
+function TouchText(x, y, dn) {
   /*
-    Function: Checking if the image touch any matched pairs.
+    Function: Checking if the image touch any text node.
 
     Parameter:
       x, y: Integer, Left-Top position of image.
@@ -132,6 +127,12 @@ function TouchMatchPair(x, y, dn) {
   let data = (dn == 1 ? data1 : data2);
   for (let i = 0; i < Matches.MatchPair.length; ++i) {
     let d = (dn == 1 ? Matches.MatchPair[i].d1 : Matches.MatchPair[i].d2);
+    let rec1 = { l: x, u: y, r: x + size - 1, d: y + size - 1 }
+    let rec2 = { l: Math.floor(data[d].x1 * 1.25), u: Math.floor(data[d].y1 * 1.25), r: Math.ceil(data[d].x2 * 1.25), d: Math.ceil(data[d].y2 * 1.25) }
+    if (!(rec1.l >= rec2.r || rec1.u >= rec2.d || rec1.r <= rec2.l || rec1.d <= rec2.u)) return true;
+  }
+  for (let i = 0; i < Matches.Unmatch[dn - 1].length; ++i) {
+    let d = Matches.Unmatch[dn - 1][i];
     let rec1 = { l: x, u: y, r: x + size - 1, d: y + size - 1 }
     let rec2 = { l: Math.floor(data[d].x1 * 1.25), u: Math.floor(data[d].y1 * 1.25), r: Math.ceil(data[d].x2 * 1.25), d: Math.ceil(data[d].y2 * 1.25) }
     if (!(rec1.l >= rec2.r || rec1.u >= rec2.d || rec1.r <= rec2.l || rec1.d <= rec2.u)) return true;
@@ -162,7 +163,7 @@ function NeedtoCompare(im1, im2, pt, dn) {
       im2_c = Crop(im2_c, maxPoint.x, maxPoint.y, size, size)
 
       if (HistCheck(im1_c)) continue;
-      if (TouchMatchPair(x, y, dn)) continue;
+      if (TouchText(x, y, dn)) continue;
       else remain.push([y, x, '?']);
 
       im1_c.delete(); im2_c.delete();

@@ -1,6 +1,7 @@
 const { Err_Exit } = require('./custom_modules/msg/msg');
 const fs = require('fs');
 const express = require('express');
+const { exit } = require('process');
 const prompt = require("prompt-sync")();
 var app = express();
 
@@ -51,18 +52,22 @@ app.get('/reply', function (req, res) {
     let que = req.query
     if (que.start != 'Y') {
         CList1[count][2] = que.result;
-        fs.writeFile(dir + '/data/NeedCheck1.json', JSON.stringify(CList1), (err) => { Err_Exit(err) })
+        fs.writeFile(dir + '/NeedCheck1.json', JSON.stringify(CList1), (err) => { Err_Exit(err) })
         count += 1;
         if (count == CList1.length - 1) {
-            res.redirect('http://localhost:8081/result')
+            res.redirect(`http://localhost:8081/result?id=${num}&list=${JSON.stringify(CList1)}`)
         }
     }
     let nextUrl = `http://localhost:8081/select?id=${num}&x=${CList1[count][1]}&y=${CList1[count][0]}&pt1=${Diff1[0]}&pt2=${Diff1[0]}`;
     res.redirect(nextUrl);
 })
 
+app.get('/submitResult', function (req, res) {
+    fs.writeFile(`./RESULT/case${num}.json`, JSON.stringify(CList1), (err) => { Err_Exit(err) })
+    exit(1);
+})
+
 var server = app.listen(8081, function () {
-    // var host = server.address().address
     var port = server.address().port
     console.log("http://%s:%s", "localhost", port)
 })

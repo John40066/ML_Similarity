@@ -9,17 +9,10 @@ const num = params.get("id");
 img1.src = "./data/" + num + "/img1.png"
 img2.src = "./data/" + num + "/img2.png"
 
-
 let x = Number(params.get("x"));
 let y = Number(params.get("y"));
 let pt1 = Number(params.get("pt1"));
 let pt2 = Number(params.get("pt2"));
-
-// let id_ele = document.getElementById("cid"); id_ele.value = num;
-// let row_ele = document.getElementById("row");
-// let col_ele = document.getElementById("col");
-// let pt1_ele = document.getElementById("pt1"); pt1_ele.value = pt1;
-// let pt2_ele = document.getElementById("pt2"); pt2_ele.value = pt2;
 
 function Crop(img, x, y, width, height) {
     let rect = new cv.Rect(x, y, width, height)
@@ -33,7 +26,6 @@ var Module = {
 
         let im1 = cv.imread(img1);
         let im2 = cv.imread(img2);
-
         let im_size = [im2.size().width, im2.size().height]
 
         // Match Template
@@ -49,7 +41,6 @@ var Module = {
 
         let dst = new cv.Mat()
         let mask = new cv.Mat()
-
         cv.matchTemplate(im2_c, im1_c, dst, cv.TM_CCOEFF_NORMED, mask);
         let res = cv.minMaxLoc(dst, mask);
         let maxPoint = res.maxLoc;
