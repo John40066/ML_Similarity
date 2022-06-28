@@ -63,7 +63,7 @@ app.get('/reply', function (req, res) {
 })
 
 app.get('/submitResult', function (req, res) {
-    fs.writeFile(`./RESULT/case${num}.json`, JSON.stringify(CList1), (err) => { Err_Exit(err) })
+    fs.writeFileSync(`./RESULT/case${num}.json`, JSON.stringify(CList1), (err) => { Err_Exit(err) })
     exit(1);
 })
 

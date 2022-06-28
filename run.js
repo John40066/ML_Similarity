@@ -1,5 +1,5 @@
-let webURL = "https://zh.wikipedia.org/wiki/Wikipedia:%E9%A6%96%E9%A1%B5"
-let caseNum = 1
+let webURL = "https://www.fandom.com/"
+let caseNum = 20
 
 const { Info, Warning, Err, Err_Exit } = require("./custom_modules/msg");
 const { TextCompare } = require('./custom_modules/TextCompare');
@@ -9,6 +9,7 @@ const { PNG } = require("pngjs");
 const Jimp = require('jimp');
 const prompt = require("prompt-sync")();
 
+Info("Running on website : " + webURL);
 const size = 100
 let data1, data2, Matches
 
@@ -160,9 +161,15 @@ function NeedtoCompare(im1, im2, pt, dn) {
       cv.matchTemplate(im2_c, im1_c, dst, cv.TM_CCOEFF_NORMED, mask);
       let res = cv.minMaxLoc(dst, mask);
       let maxPoint = res.maxLoc;
-      im2_c = Crop(im2_c, maxPoint.x, maxPoint.y, size, size)
-
+      im2_c = Crop(im2_c, maxPoint.x, maxPoint.y, size, size);
       if (HistCheck(im1_c)) continue;
+      // Checking if 2 images are the same
+      let sub = new cv.Mat();
+      cv.subtract(im1_c, im2_c, sub);
+      let matVec = new cv.MatVector();
+      cv.split(sub, matVec);
+      if (cv.countNonZero(matVec.get(0)) == 0 && cv.countNonZero(matVec.get(1)) == 0 && cv.countNonZero(matVec.get(2)) == 0)
+        continue;
       if (TouchText(x, y, dn)) continue;
       else remain.push([y, x, '?']);
 
@@ -228,6 +235,7 @@ async function onRuntimeInitialized() {
     let Im2_Im1 = NeedtoCompare(src2, src1, avg_diff_2, 2);
     Im1_Im2.push(avg_diff_1)
     Im2_Im1.push(avg_diff_2)
+    Info("Total amount is :" + Im1_Im2.length.toString())
     fs.writeFile(dir + '/NeedCheck1.json', JSON.stringify(Im1_Im2), (err) => { Err_Exit(err) })
     fs.writeFile(dir + '/NeedCheck2.json', JSON.stringify(Im2_Im1), (err) => { Err_Exit(err) })
 
