@@ -69,4 +69,5 @@
 |19|[Weather](https://weather.com/weather/today/l/3eeab4ebe2aa4f2f76a280a37402da53d6571ebcd8fb958dc423b34e08f61eed)|189|
 |20|[Fandom](https://www.fandom.com/)|315|
 
+- Total Amount : 4503
 - Git : `git@github.com:John40066/ML_Similarity.git`
