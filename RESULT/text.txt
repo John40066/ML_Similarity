@@ -1,2 +1,0 @@
-Do not summit this file.
-This is for "git push" this RESULT files
