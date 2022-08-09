@@ -22,7 +22,7 @@ function Mat2Base64(mat) {
       # Return: String, Image in base64.
     */
     const size = mat.size()
-    const png = new PNG({ width: size.width, height: size.height })
+    let png = new PNG({ width: size.width, height: size.height })
     png.data.set(mat.data)
     const buffer = PNG.sync.write(png)
     return 'data:image/png;base64,' + buffer.toString('base64')

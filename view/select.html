@@ -21,6 +21,12 @@
             color: rgb(255, 255, 255);
             border: none;
         }
+        #goback {
+            width: 80px;
+            height: 20px;
+            border-radius: 6px;
+            background-color: rgb(110, 110, 110);
+        }
         #o {
             border-radius: 8px;
             background-color: rgb(20, 150, 20);
@@ -67,6 +73,9 @@
         <button id="x" name="result" value="X">X</button>
         <button id="o" name="result" value="O">O</button>
     </form>    
+    <form action="/goback" method="get">
+        <button id="goback" name="goback" value="T">前一張</button>
+    </form>  
     <div style="visibility: hidden; width: 1px; height: 1px; overflow: hidden;">
         <img src="" alt="No image" id="img1">
         <img src="" alt="No image" id="img2">

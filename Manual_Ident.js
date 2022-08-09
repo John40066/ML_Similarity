@@ -62,6 +62,13 @@ app.get('/reply', function (req, res) {
     res.redirect(nextUrl);
 })
 
+app.get('/goback', function (req, res) {
+    // console.log("'/reply' Receive [GET] Method")
+    count -= 1;
+    let nextUrl = `http://localhost:8081/select?id=${num}&x=${CList1[count][1]}&y=${CList1[count][0]}&pt1=${Diff1[0]}&pt2=${Diff1[0]}`;
+    res.redirect(nextUrl);
+})
+
 app.get('/submitResult', function (req, res) {
     fs.writeFileSync(`./RESULT/case${num}.json`, JSON.stringify(CList1), (err) => { Err_Exit(err) })
     exit(1);

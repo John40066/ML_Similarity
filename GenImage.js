@@ -1,9 +1,9 @@
 const fs = require("fs");
-const { Info, Warning, Err, Err_Exit } = require("./custom_modules/msg");
+const { Info, Warning, Err, Err_Exit } = require("./custom_modules/msg/msg");
 const imgUtils = require("./custom_modules/ImageUtils");
 
 const size = 100;
-let LoadPath = "./RESULT/00/"
+let LoadPath = "./RESULT/0"
 let SavePath = "./Dataset/";
 
 function saveImg(img, name = "test.png") {
@@ -17,18 +17,24 @@ function saveImg(img, name = "test.png") {
 async function onRuntimeInitialized() {
     try {
         Info("Load OpenCV successfully")
-        for (let i = 20; i <= 20; ++i) {
+        let counter = [1710, 1022];
+        for (let i = 16; i <= 20; ++i) {
             Info("Case " + i.toString() + " running...")
-            let data = fs.readFileSync(LoadPath + `case${i.toString()}.json`)
+            let data = [];
+            for (let p = 0; p < 3; ++p) {
+                let d = fs.readFileSync(`${LoadPath}${p.toString()}/case${i.toString()}.json`)
+                d = JSON.parse(d);
+                data.push(d);
+            }
             let img1_base64 = fs.readFileSync(`./data/${i.toString()}/img1.png`)
             let img2_base64 = fs.readFileSync(`./data/${i.toString()}/img2.png`)
             let im1 = await imgUtils.Base642Mat(img1_base64)
             let im2 = await imgUtils.Base642Mat(img2_base64)
-            data = JSON.parse(data);
-
-            for (let j = 0; j < data.length - 1; ++j) {
-                let y = data[j][0], x = data[j][1], OX = data[j][2], pt = data[data.length - 1];
-
+            for (let j = 0; j < data[0].length - 1; ++j) {
+                let y = data[0][j][0], x = data[0][j][1], pt = data[0][data[0].length - 1];
+                let vote = 0;
+                for (let p = 0; p < 3; ++p)
+                    if (data[p][j][2] == "O") vote++;
                 let im_size = [im2.size().width, im2.size().height]
                 let radius = 60;
                 let u = Math.min(y + pt[1] - radius, y + radius); if (u < 0) u = 0;
@@ -39,7 +45,6 @@ async function onRuntimeInitialized() {
                 if (d - u < size) u = d - size;
                 let im1_c = imgUtils.Crop(im1, x, y, size, size)
                 let im2_ct = imgUtils.Crop(im2, l, u, r - l, d - u)
-
                 let dst = new cv.Mat(), mask = new cv.Mat()
                 cv.matchTemplate(im2_ct, im1_c, dst, cv.TM_CCOEFF_NORMED, mask);
                 let res = cv.minMaxLoc(dst, mask);
@@ -49,19 +54,22 @@ async function onRuntimeInitialized() {
                 let srcVec = new cv.MatVector();
                 srcVec.push_back(im1_c); srcVec.push_back(im2_c);
                 cv.vconcat(srcVec, concate);
-                saveImg(concate, `./Dataset/${OX}/${i},${y.toString()},${x.toString()}.png`)
+                let cidx = 0;
+                if (vote > 1) vote = 'O'
+                else { vote = 'X'; cidx = 1; }
+                saveImg(concate, `./Dataset/${vote}/${counter[cidx]}.png`)
+                counter[cidx]++;
                 im1_c.delete(); im2_c.delete(); im2_ct.delete(); srcVec.delete();
                 dst.delete(); mask.delete(); concate.delete();
             }
             im1.delete(); im2.delete();
         }
+        Info(counter);
     }
     catch (err) {
         try {
             if (err.message === undefined) Err("Unrecognizable Error")
-            else {
-                Err_Exit(err)
-            }
+            else Err_Exit(err)
         }
         catch (e) { console.log("> Some Error cannot be recognize.") }
     }

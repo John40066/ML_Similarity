@@ -1,15 +1,17 @@
 # Similarity Comparison by Machine Learning
+
 - [Github](https://github.com/John40066/ML_Similarity)
 - [DataSet](https://drive.google.com/drive/u/1/folders/1cTcEDPnqRvhdwJREjrFGATDNkMoOIUAV)
 - [Submit](https://drive.google.com/drive/u/1/folders/1aSsUgD15J6JUPage-CFrN-Fv0EX2SsdL)
 
 ## Installation
+
 電腦一定要有 `Node.js` - If not, [Download Here](https://nodejs.org/en/download/)
 沒有就麻煩下載一下
 打開資料夾後在終端機輸入 `npm install`
 
-
 ## Execution
+
 1. 去 DataSet 去下載你的負責部分，並解壓縮
 2. 將資料放到 `./data` 底下。(Clone 時沒有這個資料夾，請自己建一個)。
 
@@ -27,24 +29,29 @@
 
 ## FQA
 
+- Q: 卡在 OpenCV.js is loading 怎麼辦
+> Ans: 重新整理一下看看(試多次一點)
+
 - Q: 遇到 Bug 且重跑一遍依然有怎麼辦?
 > Ans: 在 [DataSet](https://drive.google.com/drive/u/1/folders/1cTcEDPnqRvhdwJREjrFGATDNkMoOIUAV) 雲端中有 [Bug回報區](https://docs.google.com/document/d/1wkdRQGKIioyS5cR_PwRiBkyuJ9yjP8Kg9czQDE--BQg/edit) 的共編，看看有沒有人遇到一樣的問題，或是直接把問題打在上面，我不定期會看一下。如果不影響執行就忽視ㄅ
 
-- Q: 按錯怎麼辦?
-> Ans: 請終止執行並再重新執行 (從 Execution 的步驟3. 開始)。抱歉沒有設計防呆QAQ，我原本有設計這個的部分，但操作很不直觀，所以想說算了...(BTW 每個 case 是獨立的，ex **不需要**因為 case 2 按錯，case 0 也跟著重案)
-
 - Q: 大概會花多久
-> Ans: 10~20 分鐘不等，感謝你!
+> Ans: 30 分鐘左右，感謝你!
 
 ### 重要問題
+
 - 若單一個case花費了不少時間才按錯，不想重來浪費時間那就跳過沒關係，只要在[Bug回報區](https://docs.google.com/document/d/1wkdRQGKIioyS5cR_PwRiBkyuJ9yjP8Kg9czQDE--BQg/edit)留下你的**當下的網址**就好(因為已經按錯了，會跳至下一個比對圖，所以**當下的網址**是指還沒按OX的比對圖，而不是按錯OX的網址)
+
 - 若有真的超級難以判斷的，一樣在[Bug回報區](https://docs.google.com/document/d/1wkdRQGKIioyS5cR_PwRiBkyuJ9yjP8Kg9czQDE--BQg/edit)留下你**當下的網址**(這裡的**當下的網址**就真的是你分辨不出來的比對圖)
+
 - 裡面都有回報方式的範例，就盡量照格式打。Bug回報區長這樣 :
 ![](https://i.imgur.com/lGzv6m5.png)
 
 ## Other
+
 - 感謝你的幫忙QAQ，希望後續處理順利，若不順利，並分析後發現資料蒐集有問題，就要再麻煩各位重按了。
 - 然後不要動到別人在 Bug回報區 留下的文字喔~
+
 ## Cases
 |Number|WebSite|Amount|
 |-|-|-|
@@ -71,3 +78,7 @@
 
 - Total Amount : 4503
 - Git : `git@github.com:John40066/ML_Similarity.git`
+
+## 7/6
+- O : 2854
+- X : 1457
