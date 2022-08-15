@@ -164,12 +164,12 @@ function NeedtoCompare(im1, im2, pt, dn) {
       im2_c = Crop(im2_c, maxPoint.x, maxPoint.y, size, size);
       if (HistCheck(im1_c)) continue;
       // Checking if 2 images are the same
-      let sub = new cv.Mat();
-      cv.subtract(im1_c, im2_c, sub);
-      let matVec = new cv.MatVector();
-      cv.split(sub, matVec);
-      if (cv.countNonZero(matVec.get(0)) == 0 && cv.countNonZero(matVec.get(1)) == 0 && cv.countNonZero(matVec.get(2)) == 0)
-        continue;
+      // let sub = new cv.Mat();
+      // cv.subtract(im1_c, im2_c, sub);
+      // let matVec = new cv.MatVector();
+      // cv.split(sub, matVec);
+      // if (cv.countNonZero(matVec.get(0)) == 0 && cv.countNonZero(matVec.get(1)) == 0 && cv.countNonZero(matVec.get(2)) == 0)
+      //   continue;
       if (TouchText(x, y, dn)) continue;
       else remain.push([y, x, '?']);
 
@@ -232,12 +232,12 @@ async function onRuntimeInitialized() {
     let avg_diff_2 = [Math.round(Matches.Avr_diff[0] * 1.25), Math.round(Matches.Avr_diff[1] * 1.25)]
     let avg_diff_1 = [-avg_diff_2[0], -avg_diff_2[1]]
     let Im1_Im2 = NeedtoCompare(src1, src2, avg_diff_1, 1);
-    let Im2_Im1 = NeedtoCompare(src2, src1, avg_diff_2, 2);
+    // let Im2_Im1 = NeedtoCompare(src2, src1, avg_diff_2, 2);
     Im1_Im2.push(avg_diff_1)
-    Im2_Im1.push(avg_diff_2)
+    // Im2_Im1.push(avg_diff_2)
     Info("Total amount is :" + Im1_Im2.length.toString())
     fs.writeFile(dir + '/NeedCheck1.json', JSON.stringify(Im1_Im2), (err) => { Err_Exit(err) })
-    fs.writeFile(dir + '/NeedCheck2.json', JSON.stringify(Im2_Im1), (err) => { Err_Exit(err) })
+    // fs.writeFile(dir + '/NeedCheck2.json', JSON.stringify(Im2_Im1), (err) => { Err_Exit(err) })
 
     Info("Drawing Unmatch Text and Saving Images...")
     let color = new cv.Scalar(255, 0, 255, 255);

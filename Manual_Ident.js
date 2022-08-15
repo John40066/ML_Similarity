@@ -14,11 +14,11 @@ try {
     }
     let d1_str, d2_str, m_str;
     d1_str = fs.readFileSync(dir + '/NeedCheck1.json')
-    d2_str = fs.readFileSync(dir + '/NeedCheck2.json')
+    // d2_str = fs.readFileSync(dir + '/NeedCheck2.json')
     CList1 = JSON.parse(d1_str)
-    CList2 = JSON.parse(d2_str)
+    // CList2 = JSON.parse(d2_str)
     Diff1 = CList1[CList1.length - 1]
-    Diff2 = CList1[CList2.length - 1]
+    // Diff2 = CList1[CList2.length - 1]
 }
 catch (err) { Err_Exit(err) }
 

@@ -4,11 +4,12 @@
 - [DataSet](https://drive.google.com/drive/u/1/folders/1cTcEDPnqRvhdwJREjrFGATDNkMoOIUAV)
 - [Submit](https://drive.google.com/drive/u/1/folders/1aSsUgD15J6JUPage-CFrN-Fv0EX2SsdL)
 
+**這次是 21 ~ 40**，以前的 1 ~ 21 不用再按了
+
 ## Installation
 
-電腦一定要有 `Node.js` - If not, [Download Here](https://nodejs.org/en/download/)
-沒有就麻煩下載一下
-打開資料夾後在終端機輸入 `npm install`
+- 電腦一定要有 `Node.js` | If not, Download [Here](https://nodejs.org/en/download/)。
+- 打開 `ML_Similarity` 的資料夾後在終端機輸入 `npm install` $\leftarrow$ **一定要做!!**
 
 ## Execution
 
@@ -16,7 +17,7 @@
 2. 將資料放到 `./data` 底下。(Clone 時沒有這個資料夾，請自己建一個)。
 
 - 資料夾結構會長這樣 :
-![](https://i.imgur.com/r85IEL9.png) ![](https://i.imgur.com/mA3GWeN.png)
+- ![](https://i.imgur.com/r85IEL9.png) ![](https://i.imgur.com/mA3GWeN.png)
 
 3. 在終端機打 `npm start` 開始執行程式
 4. 輸入負責的 Case 編號後，按下連結開始判斷相似
@@ -25,26 +26,18 @@
 
 
 ## Stardard
-基本上覺得一樣就按綠色圈圈，反之就按紅色叉叉。若兩張只是偏移量差一點點建議按圈圈，其他的若有判斷困難的狀況發作，會偏向按叉叉。
 
-## FQA
-
-- Q: 卡在 OpenCV.js is loading 怎麼辦
-> Ans: 重新整理一下看看(試多次一點)
-
-- Q: 遇到 Bug 且重跑一遍依然有怎麼辦?
-> Ans: 在 [DataSet](https://drive.google.com/drive/u/1/folders/1cTcEDPnqRvhdwJREjrFGATDNkMoOIUAV) 雲端中有 [Bug回報區](https://docs.google.com/document/d/1wkdRQGKIioyS5cR_PwRiBkyuJ9yjP8Kg9czQDE--BQg/edit) 的共編，看看有沒有人遇到一樣的問題，或是直接把問題打在上面，我不定期會看一下。如果不影響執行就忽視ㄅ
-
-- Q: 大概會花多久
-> Ans: 30 分鐘左右，感謝你!
+基本上覺得一樣就按綠色圈圈，反之就按紅色叉叉。若兩張只是偏移量差一點點建議按圈圈，其他的若有選擇困難的狀況發作，會偏向按叉叉。
 
 ### 重要問題
 
-- 若單一個case花費了不少時間才按錯，不想重來浪費時間那就跳過沒關係，只要在[Bug回報區](https://docs.google.com/document/d/1wkdRQGKIioyS5cR_PwRiBkyuJ9yjP8Kg9czQDE--BQg/edit)留下你的**當下的網址**就好(因為已經按錯了，會跳至下一個比對圖，所以**當下的網址**是指還沒按OX的比對圖，而不是按錯OX的網址)
+- 若按錯就按下「前一個」的按鈕，就可以回到上一個重新判斷
 
-- 若有真的超級難以判斷的，一樣在[Bug回報區](https://docs.google.com/document/d/1wkdRQGKIioyS5cR_PwRiBkyuJ9yjP8Kg9czQDE--BQg/edit)留下你**當下的網址**(這裡的**當下的網址**就真的是你分辨不出來的比對圖)
+- 若有真的超級難以判斷的，就按下叉叉
 
-- 裡面都有回報方式的範例，就盡量照格式打。Bug回報區長這樣 :
+- 若遇到 Bug 且重跑一遍依然有遇到(且會影響執行)的話，就在 [Bug回報區](https://docs.google.com/document/d/1wkdRQGKIioyS5cR_PwRiBkyuJ9yjP8Kg9czQDE--BQg/edit) 的共編，看看有沒有人遇到一樣的問題，或是直接把問題打在上面，我不定期會看一下。
+
+- 裡面都有回報方式的範例，就盡量照格式打(有需要讓我聯絡你就留下名字 or Line 的名稱)。Bug回報區長這樣 :
 ![](https://i.imgur.com/lGzv6m5.png)
 
 ## Other
@@ -53,6 +46,7 @@
 - 然後不要動到別人在 Bug回報區 留下的文字喔~
 
 ## Cases
+
 |Number|WebSite|Amount|
 |-|-|-|
 |1|[Wiki](https://zh.wikipedia.org/zh-tw/Wikipedia:%E9%A6%96%E9%A1%B5)|45|
@@ -82,3 +76,6 @@
 ## 7/6
 - O : 2854
 - X : 1457
+
+## Temp 
+Synthetic Minority Over-sampling Technique
