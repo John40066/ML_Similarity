@@ -1,5 +1,5 @@
-let webURL = "https://www.fandom.com/"
-let caseNum = 20
+let webURL = "https://www.flaticon.com/search?word=Game&order_by=4"
+let caseNum = 33
 
 const { Info, Warning, Err, Err_Exit } = require("./custom_modules/msg");
 const { TextCompare } = require('./custom_modules/TextCompare');
@@ -206,7 +206,7 @@ async function onRuntimeInitialized() {
       await driver2.manage().window().maximize()
     }
     catch (err) { Err_Exit(err) }
-    await Waiting(4)
+    await Waiting(6)
 
     console.log("[INFO] Start Executing Location & Comparison")
     let ElementLocate = fs.readFileSync('./src/Location.js', 'utf8')

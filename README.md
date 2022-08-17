@@ -4,7 +4,7 @@
 - [DataSet](https://drive.google.com/drive/u/1/folders/1cTcEDPnqRvhdwJREjrFGATDNkMoOIUAV)
 - [Submit](https://drive.google.com/drive/u/1/folders/1aSsUgD15J6JUPage-CFrN-Fv0EX2SsdL)
 
-**這次是 21 ~ 40**，以前的 1 ~ 21 不用再按了
+**這次是 21 ~ 35**，以前的 1 ~ 21 不用再按了
 
 ## Installation
 
@@ -34,6 +34,8 @@
 - 若按錯就按下「前一個」的按鈕，就可以回到上一個重新判斷
 
 - 若有真的超級難以判斷的，就按下叉叉
+
+- 若卡在 loading OpenCV.js 的話，就 F5 重新整理多次就好了
 
 - 若遇到 Bug 且重跑一遍依然有遇到(且會影響執行)的話，就在 [Bug回報區](https://docs.google.com/document/d/1wkdRQGKIioyS5cR_PwRiBkyuJ9yjP8Kg9czQDE--BQg/edit) 的共編，看看有沒有人遇到一樣的問題，或是直接把問題打在上面，我不定期會看一下。
 
@@ -69,11 +71,29 @@
 |18|[Reddit](https://www.reddit.com/r/okdankretard/comments/fnzqqu/upvote_if_pewdeipie_is_beating_t_serie/)|274|
 |19|[Weather](https://weather.com/weather/today/l/3eeab4ebe2aa4f2f76a280a37402da53d6571ebcd8fb958dc423b34e08f61eed)|189|
 |20|[Fandom](https://www.fandom.com/)|315|
+|--| Break Line |4503|
+|21|[雄獅旅遊](https://www.liontravel.com/category/zh-tw/index)|404|
+|22|[遊戲天堂](https://i-gamer.net/)|234|
+|23|[史萊姆](http://www.slime.com.tw/)|173|
+|24|[Tourest](https://tourest.ee/en/)|202|
+|25|[Disney+](https://www.disneyplus.com/zh-hant/home)|389|
+|26|[Mr.Marrket](https://rich01.com/learn-stock-all/)|111|
+|27|[Xbox](https://www.xbox.com/zh-TW)|489|
+|28|[Switch](https://www.nintendo.tw/hardware/switch/feature/)|438|
+|29|[ABCnews](https://abcnews.go.com/)|326|
+|30|[Bing](https://www.bing.com/?FORM=Z9FD1)|479|
+|31|[imgur](https://imgur.com/)|221|
+|32|[Flaticon 1](https://www.flaticon.com/search?word=Star)|196|
+|33|[Flaticon 2](https://www.flaticon.com/search?word=Game&order_by=4)|82|
+|--| Break Line |3744|
 
-- Total Amount : 4503
+- Total Amount : 8247
 - Git : `git@github.com:John40066/ML_Similarity.git`
 
-## 7/6
+## O/X Ratio
+
+### 7/6
+
 - O : 2854
 - X : 1457
 
