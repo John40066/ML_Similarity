@@ -17,8 +17,8 @@ function saveImg(img, name = "test.png") {
 async function onRuntimeInitialized() {
     try {
         Info("Load OpenCV successfully")
-        let counter = [1710, 1022];
-        for (let i = 16; i <= 20; ++i) {
+        let counter = [1, 1];
+        for (let i = 21; i <= 33; ++i) {
             Info("Case " + i.toString() + " running...")
             let data = [];
             for (let p = 0; p < 3; ++p) {
@@ -57,7 +57,8 @@ async function onRuntimeInitialized() {
                 let cidx = 0;
                 if (vote > 1) vote = 'O'
                 else { vote = 'X'; cidx = 1; }
-                saveImg(concate, `./Dataset/${vote}/${counter[cidx]}.png`)
+                // Modify path here
+                saveImg(concate, `./Dataset/dataset_0824/${vote}/${counter[cidx]}.png`)
                 counter[cidx]++;
                 im1_c.delete(); im2_c.delete(); im2_ct.delete(); srcVec.delete();
                 dst.delete(); mask.delete(); concate.delete();

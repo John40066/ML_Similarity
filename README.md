@@ -97,5 +97,10 @@
 - O : 2854
 - X : 1457
 
+### 8/24
+
+- O : 2372
+- X : 1379
+
 ## Temp 
 Synthetic Minority Over-sampling Technique
