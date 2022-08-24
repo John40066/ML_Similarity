@@ -85,17 +85,17 @@
 |31|[imgur](https://imgur.com/)|221|
 |32|[Flaticon 1](https://www.flaticon.com/search?word=Star)|196|
 |33|[Flaticon 2](https://www.flaticon.com/search?word=Game&order_by=4)|82|
-|--| Break Line |3744|
+|--| Break Line |3741|
 
-- Total Amount : 8247
+- Total Amount : 8244
 - Git : `git@github.com:John40066/ML_Similarity.git`
 
 ## O/X Ratio
 
 ### 7/6
 
-- O : 2854
-- X : 1457
+- O : 2855
+- X : 1458
 
 ### 8/24
 
