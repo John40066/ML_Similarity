@@ -1,5 +1,11 @@
-let webURL = "https://www.flaticon.com/search?word=Game&order_by=4"
-let caseNum = 33
+let webURL = "https://newtalk.tw/"
+// 2 Different Web
+let Use_Different_URL = false;
+let webURL2 = "https://zh.wikipedia.org/zh-tw/Wikipedia:%E9%A6%96%E9%A1%B5"
+
+let caseNum = 42
+
+let Wait_Time = 6;
 
 const { Info, Warning, Err, Err_Exit } = require("./custom_modules/msg");
 const { TextCompare } = require('./custom_modules/TextCompare');
@@ -10,6 +16,7 @@ const Jimp = require('jimp');
 const prompt = require("prompt-sync")();
 
 Info("Running on website : " + webURL);
+if (Use_Different_URL) Info("Running on website : " + webURL2);
 const size = 100
 let data1, data2, Matches
 
@@ -201,12 +208,13 @@ async function onRuntimeInitialized() {
         withCapabilities(webdriver.Capabilities.firefox()).
         build();
       driver1.get(webURL)
-      driver2.get(webURL)
+      if (Use_Different_URL) driver2.get(webURL2)
+      else driver2.get(webURL)
       await driver1.manage().window().maximize()
       await driver2.manage().window().maximize()
     }
     catch (err) { Err_Exit(err) }
-    await Waiting(6)
+    await Waiting(Wait_Time)
 
     console.log("[INFO] Start Executing Location & Comparison")
     let ElementLocate = fs.readFileSync('./src/Location.js', 'utf8')
@@ -235,7 +243,7 @@ async function onRuntimeInitialized() {
     // let Im2_Im1 = NeedtoCompare(src2, src1, avg_diff_2, 2);
     Im1_Im2.push(avg_diff_1)
     // Im2_Im1.push(avg_diff_2)
-    Info("Total amount is :" + Im1_Im2.length.toString())
+    Info("Total amount is : " + Im1_Im2.length.toString())
     fs.writeFile(dir + '/NeedCheck1.json', JSON.stringify(Im1_Im2), (err) => { Err_Exit(err) })
     // fs.writeFile(dir + '/NeedCheck2.json', JSON.stringify(Im2_Im1), (err) => { Err_Exit(err) })
 
