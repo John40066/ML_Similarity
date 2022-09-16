@@ -10,7 +10,7 @@
 
 |Group #|Cases|
 |-|-|
-|Group 1ˇ34~42|
+|Group 1|34~42|
 |Group 2|43~50|
 |Group 3|51~58|
 |Group 4|59~68|
