@@ -4,12 +4,30 @@
 - [DataSet](https://drive.google.com/drive/u/1/folders/1cTcEDPnqRvhdwJREjrFGATDNkMoOIUAV)
 - [Submit](https://drive.google.com/drive/u/1/folders/1aSsUgD15J6JUPage-CFrN-Fv0EX2SsdL)
 
-**請根據分配到的 Case 下去按，誤下載錯 Case 的編號**
+**請根據分配到的 Group/Case 下去按，不要下載錯的編號喔~~~**
+
+## Group
+
+|Group #|Cases|
+|-|-|
+|Group 1ˇ34~42|
+|Group 2|43~50|
+|Group 3|51~58|
+|Group 4|59~68|
+|Group 5|69~78|
+|Group 6|79~89|
+|Group 7|90~98|
+
+- 每個 Group 接平均都需要按 2400 多個 O/X，我有盡量平分了。
 
 ## Installation
 
-- 電腦一定要有 `Node.js` | If not, Download [Here](https://nodejs.org/en/download/)。
-- 打開 `ML_Similarity` 的資料夾後在終端機輸入 `npm install` $\leftarrow$ **一定要做!!**
+- 從 [Github](https://github.com/John40066/ML_Similarity) Clone/Download 程式
+
+- 電腦一定要有 `Node.js` 
+    - If not, Download [Here](https://nodejs.org/en/download/)。
+
+- 打開 `ML_Similarity` 的資料夾後在終端機輸入 `npm install` $\leftarrow$ ***一定要做!!***
 
 ## Execution
 
@@ -22,8 +40,7 @@
 3. 在終端機打 `npm start` 開始執行程式
 4. 輸入負責的 Case 編號後，按下連結開始判斷相似
 5. 完成判斷後會出現整體結果，黃色的是你的判斷部分，紫色的不用理會(只會有一張圖有顏色)
-6. 將 RESULT 中的資料上傳到 [Submit](https://drive.google.com/drive/u/1/folders/1aSsUgD15J6JUPage-CFrN-Fv0EX2SsdL)。(不用壓縮，直接傳就好)
-
+6. 將 RESULT 中的資料上傳到 [Submit](https://drive.google.com/drive/u/1/folders/1aSsUgD15J6JUPage-CFrN-Fv0EX2SsdL)。(不用壓縮，直接傳就好)。放到對應的 Group 之中(S_1、S_2、S_3 都可以，同組人不重複就好)。
 
 ## Stardard
 

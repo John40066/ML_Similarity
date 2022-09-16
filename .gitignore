@@ -3,5 +3,7 @@ run.js
 
 /data
 /node_modules
-/RESULT
+/RESULT/00
+/RESULT/01
+/RESULT/02
 /Dataset
