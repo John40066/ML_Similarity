@@ -1,4 +1,4 @@
-## Cases
+# Cases
 
 |Number|WebSite|Amount|
 |-|-|-|
@@ -47,7 +47,91 @@
 |40|Disney+ & SamSung|286|
 |41|Amazon & Wiki|352|
 |42|[NewTalk](https://newtalk.tw/)|173|
-|--|**Group 2**|2417|
+|--|**Group 2**|2408|
+|43|[Zoom](https://zoom.us/)|246|
+|44|IG & SideeX|183|
+|45|[Netflix](https://www.netflix.com/tw/)|388|
+|46|[W3schools](https://www.w3schools.com/html/html_css.asp)|98|
+|47|ABCnews & Tourest|297|
+|48|Xbox & Switch|461|
+|49|[Animal for Kid](https://kids.britannica.com/kids/article/animal/352756)|258|
+|50|[Discovery](https://www.discoverychannel.com.tw/ap_index.php)|477|
+|--|**Group 3**|2419|
+|51|[50 Websites](https://www.visualcapitalist.com/the-50-most-visited-websites-in-the-world/)|316|
+|52|[Visual Capitalist](https://www.visualcapitalist.com/)|226|
+|53|痞客幫 & 聯合新聞網|526|
+|54|[Outlook](https://outlook.live.com/owa/)|315|
+|55|[WhatsApp](https://www.whatsapp.com/)|143|
+|56|Zoom & LeetCode|267|
+|57|動畫瘋 & Yahoo|277|
+|58|[Office](https://www.office.com/)|349|
+|--|**Group 4**|2409|
+|59|[Naver](https://www.naver.com/)|114|
+|60|PCHome 3C & Books|276|
+|61|[Pinterest](https://www.pinterest.com/)|228|
+|62|[Discord](https://discord.com/)|215|
+|63|Netflix & Disney+|388|
+|64|Debuggercafe & W3schools|206|
+|65|PCHome|213|
+|66|[Linkedin](https://www.linkedin.com/)|189|
+|67|Discovery & Animal for Kids|477|
+|68|Mr.Marrket|103|
+|--|**Group 5**|2407|
+|69|[CNN](https://edition.cnn.com/)|179|
+|70|[Mail.ru](https://mail.ru/)|87|
+|71|Office & Microsoft|349|
+|72|[Globo](https://www.globo.com/)|112|
+|73|[Twitch](https://www.twitch.tv/)|305|
+|74|NewTalk & Moodle|219|
+|75|[ebay](https://www.ebay.com/)|256|
+|76|Discord & Linkedin|211|
+|77|[Bing2](https://www.bing.com/)|510|
+|78|CNN & ABCNews|179|
+|--|**Group 6**|2402|
+|79|Naver & Flaticon|117|
+|80|[Yahoo.JP](https://news.yahoo.co.jp/pickup/6438917)|114|
+|81|[Twitch Live](https://www.twitch.tv/restiafps)|355|
+|82|[OK.ru](https://ok.ru/)|110|
+|83|Visual Capitalist|420|
+|84|[Bilibili](https://www.bilibili.com/)|223|
+|85|[TikTok](https://www.tiktok.com/)|107|
+|86|AliExpress & FedEx|191|
+|87|PayPal & ebay|341|
+|88|[Amazon.uk](https://www.amazon.co.uk/)|104|
+|89|[Webex](https://www.webex.com/zh-tw/index.html)|320|
+|--|**Group 7**|2479|
+|90|[AliExpress](https://www.aliexpress.com/)|181|
+|91|[Google Meet](https://meet.google.com/)|163|
+|92|[FedEx](https://www.fedex.com/zh-tw/open-account.html?CMP=KNC-1004491-1-2-950-1000000-APAC-TW-ZH-PPCTWBRAND000YJ0219&gclid=57d40f904a7b1408e0306cb4d85956cb&gclsrc=3p.ds&)|253|
+|93|Webex & Google Meet|351|
+|94|[樂天](https://www.rakuten.co.jp/)|365|
+|95|Bilibili & Reddit|249|
+|96|[Reddit](https://www.reddit.com/)|249|
+|97|[Spotify](https://www.spotify.com/tw/)|158|
+|98|Bing & Samsung|2479|
 
+# O/X Ratio
 
+## 7/6
+
+- O : 2855
+- X : 1458
+
+## 8/24
+
+- O : 2372
+- X : 1379
+
+#### Mixed
+
+- O : 2842 (2274 / 284 / 284)
+- X : 2847 (2279 / 284 / 284)
 - Total Amount : 8244
+
+# Temp 
+Synthetic Minority Over-sampling Technique
+Fine-grained image categorization
+
+# Git
+https://github.com/John40066/ML_Similarity
+

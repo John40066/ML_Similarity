@@ -1,11 +1,11 @@
-let webURL = "https://newtalk.tw/"
+let webURL = "https://www.bing.com/"
 // 2 Different Web
-let Use_Different_URL = false;
-let webURL2 = "https://zh.wikipedia.org/zh-tw/Wikipedia:%E9%A6%96%E9%A1%B5"
+let Use_Different_URL = true;
+let webURL2 = "https://www.samsung.com/tw/"
 
-let caseNum = 42
+let caseNum = 98
 
-let Wait_Time = 6;
+let Wait_Time = 10;
 
 const { Info, Warning, Err, Err_Exit } = require("./custom_modules/msg");
 const { TextCompare } = require('./custom_modules/TextCompare');

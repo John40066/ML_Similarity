@@ -31,11 +31,11 @@
 
 ### 重要問題
 
-- 若按錯就按下「前一個」的按鈕，就可以回到上一個重新判斷
+- 若按錯就按下「**前一個**」的按鈕，就可以回到上一個重新判斷
 
-- 若有真的超級難以判斷的，就按下叉叉
+- 若有真的超級難以判斷的，建議按下叉叉
 
-- 若卡在 loading OpenCV.js 的話，就 F5 重新整理多次就好了
+- 若卡在 **loading OpenCV.js** 的話，就按 F5 重新整理個幾次就好了
 
 - 若遇到 Bug 且重跑一遍依然有遇到(且會影響執行)的話，就在 [Bug回報區](https://docs.google.com/document/d/1wkdRQGKIioyS5cR_PwRiBkyuJ9yjP8Kg9czQDE--BQg/edit) 的共編，看看有沒有人遇到一樣的問題，或是直接把問題打在上面，我不定期會看一下。
 
@@ -48,25 +48,5 @@
 - 然後不要動到別人在 Bug回報區 留下的文字喔~
 
 
+
 - Git : `git@github.com:John40066/ML_Similarity.git`
-
-## O/X Ratio
-
-### 7/6
-
-- O : 2855
-- X : 1458
-
-### 8/24
-
-- O : 2372
-- X : 1379
-
-#### Mixed
-
-- O : 2842 (2274 / 284 / 284)
-- X : 2847 (2279 / 284 / 284)
-
-## Temp 
-Synthetic Minority Over-sampling Technique
-Fine-grained image categorization
