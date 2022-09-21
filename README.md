@@ -175,6 +175,6 @@
 |95|Bilibili & Reddit|249|
 |96|[Reddit](https://www.reddit.com/)|249|
 |97|[Spotify](https://www.spotify.com/tw/)|158|
-|98|Bing & Samsung|2479|
+|98|Bing & Samsung|510|
 
 - Git : `git@github.com:John40066/ML_Similarity.git`

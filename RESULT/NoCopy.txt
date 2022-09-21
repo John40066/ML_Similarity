@@ -1,2 +1,2 @@
 This file is for git pushing the empty "RESULT" dictionary.
-No need to summit this file into google cloud.
+No need to summit this file to the google cloud.
